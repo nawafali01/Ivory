@@ -1,7 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom'
 import Layout from '../layout/Layout'
 import NotFound404 from '../src/components/NotFound404'
-import Home from '../src/Pages/home/Home'
+import Home from '../src/pages/home/Home'
+import Ourprojects from '../src/pages/our-projects/ourprojects'
+import Services from '../src/pages/services/Services'
+import Contact from '../src/pages/contact/Contact'
 
 const router = createBrowserRouter([
   {
@@ -13,16 +16,16 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: '/about',
-        element: <div><h1>About Page</h1></div>
+        path: '/our-project',
+        element: <Ourprojects/>
       },
       {
         path: '/services',
-        element: <div><h1>Services Page</h1></div>
+        element: <Services/>
       },
       {
         path: '/contact',
-        element: <div><h1>Contact Page</h1></div>
+        element: <Contact/>
       },
       {
         path: '*',

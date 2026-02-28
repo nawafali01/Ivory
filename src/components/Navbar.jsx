@@ -13,7 +13,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         {/* Logo - Left */}
         <div className="flex items-center gap-2 flex-shrink-0">
-          <img src="https://via.placeholder.com/40" alt="Logo" className="w-8 h-8 sm:w-10 sm:h-10 rounded" />
+          <img src="https://res.cloudinary.com/dtndixrra/image/upload/v1769250003/Gemini_Generated_Image_il7e69il7e69il7e_x7ygyv.png" alt="Logo" className="w-24 h-24 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded" />
         </div>
 
         {/* Hamburger Menu - Mobile */}
@@ -29,10 +29,10 @@ const Navbar = () => {
         <ul className={`${
           isOpen ? 'flex' : 'hidden'
         } md:flex absolute md:relative top-16 md:top-0 left-0 right-0 md:left-auto md:right-auto flex-col md:flex-row list-none gap-4 md:gap-6 lg:gap-8 bg-black md:bg-transparent p-4 md:p-0 w-full md:w-auto`}>
-          <li><Link to="/" className="text-white hover:text-green-500 text-sm sm:text-base" onClick={() => setIsOpen(false)}>FIT-OUT</Link></li>
-          <li><Link to="/about" className="text-white hover:text-green-500 text-sm sm:text-base" onClick={() => setIsOpen(false)}>MAINTENANCE</Link></li>
-          <li><Link to="/services" className="text-white hover:text-green-500 text-sm sm:text-base" onClick={() => setIsOpen(false)}>Cleaning</Link></li>
-          <li><Link to="/contact" className="text-white hover:text-green-500 text-sm sm:text-base" onClick={() => setIsOpen(false)}>Real Estate</Link></li>
+          <li><Link to="/" className="text-white hover:text-green-500 text-sm sm:text-base" onClick={() => setIsOpen(false)}>Home</Link></li>
+          <li><Link to="/our-project" className="text-white hover:text-green-500 text-sm sm:text-base" onClick={() => setIsOpen(false)}>Our Projects</Link></li>
+          <li><Link to="/services" className="text-white hover:text-green-500 text-sm sm:text-base" onClick={() => setIsOpen(false)}>Services</Link></li>
+          <li><Link to="/contact" className="text-white hover:text-green-500 text-sm sm:text-base" onClick={() => setIsOpen(false)}>Contact Us</Link></li>
         </ul>
 
         {/* Social Icons - Right */}
