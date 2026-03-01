@@ -4,7 +4,7 @@ import Navbar from '../src/components/Navbar'
 import Footer from '../src/components/Footer'
 
 const Layout = () => {
-  const whatsappNumber = '1234567890' // Replace with your WhatsApp number
+  const whatsappNumber = '+971544605759' // Replace with your WhatsApp number
   const whatsappMessage = 'Hello! How can we help you?'
 
   const handleWhatsAppClick = () => {

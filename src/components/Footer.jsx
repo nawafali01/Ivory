@@ -7,11 +7,26 @@ const Footer = () => {
     <footer className="bg-black">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Footer Content Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8">
           {/* Company Info */}
           <div>
             <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white border-b border-white pb-2">About Us</h3>
             <p className="text-gray-300 text-sm sm:text-base leading-relaxed">IVORY is a leading company providing innovative solutions and services to our valued clients worldwide.</p>
+
+            <div className="flex gap-3 flex-wrap pt-2">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 bg-white text-black rounded-full hover:bg-green-500 hover:scale-125 transition-all duration-300">
+                <i className="fab fa-facebook text-sm sm:text-lg"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 bg-white text-black rounded-full hover:bg-green-500 hover:scale-125 transition-all duration-300">
+                <i className="fab fa-instagram text-sm sm:text-lg"></i>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 bg-white text-black rounded-full hover:bg-green-500 hover:scale-125 transition-all duration-300">
+                <i className="fab fa-youtube text-sm sm:text-lg"></i>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 bg-white text-black rounded-full hover:bg-green-500 hover:scale-125 transition-all duration-300">
+                <i className="fab fa-twitter text-sm sm:text-lg"></i>
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -36,7 +51,7 @@ const Footer = () => {
           </div>
 
           {/* Social Links */}
-          <div>
+          {/* <div>
             <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white border-b border-white pb-2">Follow Us</h3>
             <div className="flex gap-3 flex-wrap">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 bg-white text-black rounded-full hover:bg-green-500 hover:scale-125 transition-all duration-300">
@@ -52,17 +67,17 @@ const Footer = () => {
                 <i className="fab fa-twitter text-sm sm:text-lg"></i>
               </a>
             </div>
-          </div>
+          </div> */}
         </div>
 
         {/* Footer Bottom */}
-        <div className="border-t border-gray-700 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-center sm:text-left">
-          <p className="text-gray-400 text-xs sm:text-sm">&copy; {currentYear} IVORY. All rights reserved.</p>
-          <div className="flex gap-4 sm:gap-6 justify-center flex-wrap text-xs sm:text-sm">
+        <div className="border-t border-gray-700 pt-6 sm:pt-8 flex flex-col justify-center items-center gap-4 text-center sm:text-left">
+          <p className="text-gray-400 text-center text-xs sm:text-sm">&copy; {currentYear} IVORY. All rights reserved.</p>
+          {/* <div className="flex gap-4 sm:gap-6 justify-center flex-wrap text-xs sm:text-sm">
             <a href="#privacy" className="text-gray-300 hover:text-white hover:underline">Privacy Policy</a>
             <a href="#terms" className="text-gray-300 hover:text-white hover:underline">Terms of Service</a>
             <a href="#sitemap" className="text-gray-300 hover:text-white hover:underline">Sitemap</a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

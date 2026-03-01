@@ -49,7 +49,7 @@ const Features = () => {
           </h1>
 
 
-          <p className="text-gray-600 max-w-2xl mx-auto text-center leading-relaxed text-lg font-medium">
+          <p className="text-black max-w-4xl mx-auto text-center leading-relaxed text-lg ">
             At IVORY Fit-Out, we deliver more than just interiors. We build trust through 
             precision, quality, and a commitment to international standards.
           </p>
@@ -60,13 +60,13 @@ const Features = () => {
           {features.map((feature) => (
             <div 
               key={feature.id} 
-              className="group relative bg-white p-8 rounded-2xl border border-gray-100 
+              className="group relative bg-gray-200 p-8 rounded-2xl border border-gray-200 
                          flex items-start space-x-6 cursor-pointer
                          transition-all duration-500 ease-in-out
                          hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:border-blue-200"
             >
               {/* Icon Container */}
-              <div className={`flex-shrink-0 w-24 h-24 ${feature.bgColor} rounded-xl 
+              <div className={`flex-shrink-0 w-24 h-24 border border-gray-100 rounded-xl 
                                flex items-center justify-center text-4xl 
                                transition-all duration-500 shadow-inner
                                group-hover:scale-110 group-hover:rotate-6`}>
@@ -76,11 +76,11 @@ const Features = () => {
 
               {/* Text Section */}
               <div className="flex-1">
-                <h3 className="text-2xl font-bold text-gray-800 mb-3 
+                <h3 className="text-2xl font-bold  text-gray-800 mb-3 
                                transition-colors duration-300 group-hover:text-blue-600">
                   {feature.title}
                 </h3>
-                <p className="text-gray-700 text-base leading-relaxed opacity-90">
+                <p className="text-gray-700 text-base  leading-relaxed opacity-90">
                   {feature.description}
                 </p>
               </div>
