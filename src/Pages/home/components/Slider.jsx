@@ -85,22 +85,8 @@ const SmoothSlider = () => {
             </button>
         </div>
 
-        --- NAYA NUMBERING SECTION ---
-        <div className="flex items-baseline gap-3 mt-10">
-          <span className="text-6xl font-bold text-black leading-none">
-            {/* Jab loop reset ho raha ho to '1' dikhao, warna normal index */}
-            {currentIndex >= totalImages ? 1 : currentIndex + 1}
-          </span>
-          
-          <span className="text-3xl text-gray-300 font-light">/</span>
-          
-          <span className="text-3xl text-gray-500 font-medium">
-            {/* Logic: Agar index 4 (last) hai to '0' dikhao */}
-            {currentIndex === totalImages - 1 ? 0 : (currentIndex >= totalImages ? 2 : currentIndex + 2)}
-          </span>
-        </div>
-        ------------------------------
-
+        
+        
       </div>
     </div>
   );
