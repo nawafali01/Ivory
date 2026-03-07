@@ -8,6 +8,7 @@ import Features from './components/Features'
 import JourneyTimeline from './components/JourneyTimeline'
 import ContactSection from './components/ContactSection'
 import LocationSection from '../contact/LocationSection'
+import ServicesCard from '../services/ServiceCard'
 
 
 
@@ -17,7 +18,8 @@ const Home = () => {
     <div className="w-full">
       <Hero />
       {/* <Cards /> */}
-      <Excellence/>
+      {/* <Excellence/> */}
+      <ServicesCard/>
       <SmoothSlider/>
       <Awards/>
       <Features/>

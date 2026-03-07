@@ -3,7 +3,7 @@ import React from "react";
 const Excellence = () => {
   return (
     <div className="max-w-6xl h-96  w-full mx-auto p-16 bg-white rounded-xl">
-      <h1 className="text-6xl text-center font-bold text-gray-900 mb-6"  >Excellence</h1>
+      <h1 className="text-6xl font-mont text-center font-bold text-gray-900 mb-6"  >Excellence</h1>
       <p className="text-black-600 leading-relaxed text-center text-lg">
         At IVORY Fit-out & Renovation, we believe that a well-designed space is the
         foundation of success whether that <br></br> means a modern office fit-out or a

@@ -1,9 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 @import "tailwindcss";
 
 @theme {
   --color-primary: #4CAF50;
   --color-dark: #000000;
   --color-dark-bg: #1a1a1a;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Hide scrollbar completely */
