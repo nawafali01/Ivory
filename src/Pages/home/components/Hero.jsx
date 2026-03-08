@@ -1,6 +1,7 @@
 import React from 'react'
 import { CheckBadgeIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
-import logo from '../../../assets/images/heroimg.jpg'
+// import logo from '../../../assets/images/heroimg.jpg' // Keep if needed
+import logo1 from '../../../assets/images/luxury-architecture-exterior-design.jpg'
 
 const Hero = () => {
   return (
@@ -9,16 +10,22 @@ const Hero = () => {
     <section className="relative min-h-screen w-full flex flex-col justify-center overflow-hidden bg-slate-900 pt-16 pb-40">
       
       <div className="absolute inset-0 z-0">
-        <img 
+        {/* <img 
           src={logo}
+          alt="Construction Site" 
+          className="w-full h-full object-cover opacity-50"
+        /> */}
+        <img 
+          src={logo1}
           alt="Construction Site" 
           className="w-full h-full object-cover opacity-50"
         />
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 lg:px-12 xl:px-24">
-        <div className="max-w-3xl"> {/* Container width bhi thori kam ki hai */}
+      {/* CHANGES HERE: Content Shifted Left by reducing container padding & max-width */}
+      <div className="relative z-10 container mx-auto px-4 lg:px-8 xl:px-16">
+        <div className="max-w-4xl"> {/* Thora wider container content ko left align rakhne ke liye */}
           
           {/* Top Badge: Compact size */}
           <div className="inline-flex items-center gap-2 backdrop-blur-md bg-white/10 border border-white/20 px-3 py-1 rounded-full mb-6">
@@ -40,15 +47,18 @@ const Hero = () => {
             We specialize in turning complex blueprints into architectural masterpieces.
           </p>
 
-          {/* Buttons: Sleek and small sizing */}
-          <div className="flex flex-col sm:flex-row flex-wrap gap-3 mb-12">
-            <button className="group flex items-center justify-center gap-2 bg-black text-white hover:bg-white hover:text-black font-bold py-2.5 px-6 uppercase rounded-md transition-all shadow-sm shadow-white text-xs md:text-sm">
+          {/* Buttons: Sleek and small sizing + Blur Effect */}
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-12">
+            
+            {/* CHANGES HERE: 'Explore Projects' Button with Blur */}
+            <button className="group flex items-center justify-center gap-2 backdrop-blur-sm bg-white/10 text-white hover:bg-white hover:text-black font-bold py-2.5 px-6 uppercase rounded-md transition-all border border-white/20 hover:border-white text-xs md:text-sm shadow-md shadow-black/30">
               <span>Explore Projects</span>
               <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
             
-            <button className="bg-black hover:bg-yellow-600 text-white font-bold py-2.5 px-6 uppercase transition-all rounded-md border-2 border-black hover:border-yellow-600 text-xs md:text-sm">
-              Get a Quote
+            {/* CHANGES HERE: 'Get a Quote' Button with Blur */}
+            <button className="backdrop-blur-md bg-white/10 text-white hover:bg-yellow-500 hover:text-black font-bold py-2.5 px-6 uppercase transition-all rounded-md border border-white/20 hover:border-yellow-500 text-xs md:text-sm shadow-lg">
+             Get a Quote
             </button>
           </div>
 

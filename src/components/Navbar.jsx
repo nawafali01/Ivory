@@ -12,7 +12,7 @@ const Navbar = () => {
     <nav className="bg-black  sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         {/* Logo - Left */}
-        <div className="flex items-center gap-2 flex-shrink-0">
+        <div className="flex items-center ml-4 gap-2 flex-shrink-0">
           <img src="https://res.cloudinary.com/dtndixrra/image/upload/v1769250003/Gemini_Generated_Image_il7e69il7e69il7e_x7ygyv.png" alt="Logo" className="w-24 h-24 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded" />
         </div>
 

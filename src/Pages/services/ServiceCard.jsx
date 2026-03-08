@@ -61,30 +61,30 @@ const ServicesCard = () => {
   ];
 
   return (
-    <div className="bg-[#0a1120] py-20 px-6 text-center">
+    <div className="bg-gray-50 py-20 px-6 text-center">
       {/* Container for Heading and Tag */}
       <div className="max-w-7xl mx-auto mb-16">
         {/* Top small div (Services Tag) */}
-        <div className="inline-block px-4 py-1 mb-4 text-sm font-semibold tracking-wider text-blue-400 uppercase bg-blue-400/10 rounded-full">
+        <div className="inline-block px-4 py-1 mb-4 text-sm font-semibold tracking-wider text-white uppercase bg-black rounded-full">
           Services
         </div>
 
         {/* Main Section Heading */}
-        <h6 className="text-2xl md:text-2xl font-bold text-white">
+        <h6 className="text-2xl md:text-2xl font-bold text-black">
           Complete Maintenance Excellence for Your Home
         </h6>
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-16">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-x-8 gap-y-16">
         {services.map((item, index) => (
           <div key={index} className="flex flex-col items-center text-center group">
             {/* Icon Container */}
-            <div className="text-white mb-6 transition-transform duration-300 group-hover:scale-110">
+            <div className="text-black mb-6 transition-transform duration-300 group-hover:scale-110">
               {item.icon}
             </div>
             
             {/* Heading */}
-            <h3 className="text-white text-xl font-semibold mb-4 tracking-wide">
+            <h3 className="text-black text-xl font-semibold mb-4 tracking-wide">
               {item.title}
             </h3>
             

@@ -14,7 +14,7 @@ const Services = () => {
    <WhyChooseSection/>
    <WorkflowSection/>
    <CTASection/>
-    <ServicesCard/>
+    {/* <ServicesCard/> */}
     </>
   )
 }

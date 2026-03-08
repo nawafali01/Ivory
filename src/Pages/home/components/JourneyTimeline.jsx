@@ -2,71 +2,103 @@ import React, { useRef } from "react";
 import { FaChevronLeft, FaChevronRight, FaRegClock } from "react-icons/fa";
 
 const milestones = [
-  { title: "K4 Fitout started", year: "2020" },
+  { title: "ICG Fitout Started", year: "2020" },
   { title: "Team Expansion", year: "2022" },
   { title: "Record Breaking Project", year: "2023" },
-  { title: "Joinery Factory", year: "2023" },
+  { title: "Joinery Factory Launch", year: "2023" },
+  { title: "Major Corporate Contracts", year: "2024" },
+  { title: "Sustainable Design Award", year: "2024" },
+  { title: "Regional Office Expansion", year: "2025" },
 ];
 
 const JourneyTimeline = () => {
   const scrollRef = useRef(null);
 
   const scroll = (direction) => {
-    scrollRef.current?.scrollBy({
-      left: direction === "left" ? -300 : 300,
-      behavior: "smooth",
-    });
+    const { current } = scrollRef;
+    if (current) {
+      const scrollAmount = direction === "left" ? -400 : 400;
+      current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
   };
 
   return (
-    <div className="relative bg-gray-100 py-24 px-8">
-      {/* Arrows */}
-      <button
-        onClick={() => scroll("left")}
-        className="absolute left-4 top-60 -translate-y-1/2 z-20 bg-white border border-gray-300 p-3 rounded shadow-sm"
-      >
-        <FaChevronLeft />
-      </button>
+    <div className="relative bg-[#F9FAFB] py-24 px-4 sm:px-8">
+      {/* Header Section */}
+      <div className="mb-20 text-center">
+        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#B8860B]">
+          OUR LEGACY
+        </p>
+        <h2 className="mt-4 text-[32px] md:text-[40px] font-extrabold leading-tight text-[#0B1220] max-w-4xl mx-auto">
+          The Glory of I C G Technical Services LLC
+        </h2>
+      </div>
 
-      <button
-        onClick={() => scroll("right")}
-        className="absolute right-4 top-60 -translate-y-1/2 z-20 bg-white border border-gray-300 p-3 rounded shadow-sm"
-      >
-        <FaChevronRight />
-      </button>
+      {/* Navigation Buttons - Positioned ABOVE the line */}
+      <div className="absolute left-0 right-0 top-[405px] z-30 hidden lg:block pointer-events-none">
+        <div className="mx-auto max-w-7xl flex justify-between px-2 py-5">
+          <button
+            onClick={() => scroll("left")}
+            className="pointer-events-auto bg-white border border-gray-200 p-4 rounded-full shadow-xl hover:bg-[#B8860B] hover:text-white transition-all transform -translate-y-1/2"
+          >
+            <FaChevronLeft className="text-xl" />
+          </button>
+          <button
+            onClick={() => scroll("right")}
+            className="pointer-events-auto bg-white border border-gray-200 p-4 rounded-full shadow-xl hover:bg-[#B8860B] hover:text-white transition-all transform -translate-y-1/2"
+          >
+            <FaChevronRight className="text-xl" />
+          </button>
+        </div>
+      </div>
 
       {/* Scroll Area */}
       <div
         ref={scrollRef}
         className="overflow-x-auto scroll-smooth scrollbar-hide"
       >
-        <div className="relative flex min-w-max px-20">
-
-          {/* ✅ Perfect Center Line */}
-          <div className="absolute left-0 right-0 top-[144px] h-[2px] bg-black"></div>
+        <div className="relative flex min-w-max items-center py-12 px-10 sm:px-20">
+          
+          {/* ✅ Background Connecting Line */}
+          <div className="absolute left-0 right-0 top-[172px] h-[2px] bg-gray-200"></div>
 
           {milestones.map((item, index) => (
             <div
               key={index}
-              className="relative flex flex-col items-center mx-28"
+              className="relative flex flex-col items-center mx-12 sm:mx-20 lg:mx-28 group"
             >
-              <h3 className="text-xl font-medium text-gray-800 text-center">
-                {item.title}
-              </h3>
+              {/* Text Content Area */}
+              <div className="h-28 flex flex-col items-center justify-end mb-8">
+                <h3 className="text-[15px] sm:text-lg font-extrabold text-[#0B1220] text-center max-w-[170px] leading-tight group-hover:text-[#B8860B] transition-colors">
+                  {item.title}
+                </h3>
+                {/* GOLDEN YEAR */}
+                <p className="text-[#B8860B] text-base sm:text-lg font-black mt-2 tracking-widest ">
+                  {item.year}
+                </p>
+              </div>
 
-              <p className="text-yellow-600 text-lg font-semibold mt-2">
-                {item.year}
-              </p>
-
-              {/* Icon wrapper with fixed spacing */}
-              <div className="relative z-10 mt-12">
-                <div className="w-16 h-16 rounded-full bg-black flex items-center justify-center border-4 border-gray-200">
-                  <FaRegClock className="text-white text-2xl" />
+              {/* GOLDEN BORDER CIRCLE */}
+              <div className="relative z-10">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#0B1220] flex items-center justify-center border-[5px] border-[#D4AF37] shadow-[0_0_20px_rgba(212,175,55,0.3)] transition-transform group-hover:scale-110">
+                  <FaRegClock className="text-[#D4AF37] text-xl sm:text-2xl" />
                 </div>
               </div>
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Mobile Swipe Indicator (Golden) */}
+      <div className="mt-12 flex flex-col items-center lg:hidden">
+        <div className="flex gap-1.5 mb-3">
+            <div className="h-1 w-10 bg-[#B8860B] rounded-full"></div>
+            <div className="h-1 w-2 bg-gray-300 rounded-full"></div>
+            <div className="h-1 w-2 bg-gray-300 rounded-full"></div>
+        </div>
+        <p className="text-black text-[10px] uppercase font-bold tracking-[0.2em]">
+          Scroll for Legacy
+        </p>
       </div>
     </div>
   );

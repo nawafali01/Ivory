@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 const SmoothSlider = () => {
   const originalImages = [
@@ -8,88 +8,114 @@ const SmoothSlider = () => {
     "/images/building-project3.jpg",
     "/images/building-project4.jpg",
     "/images/building-project-5.jpg",
-    "/images/building-project.jpg",
     "/images/building-project7.jpg",
   ];
 
-  // cloned slides at both ends to enable seamless looping
-  const slides = [
-    originalImages[originalImages.length - 1],
-    ...originalImages,
-    originalImages[0],
+  // 1. Images ko clone karna (Infinite effect ke liye)
+  const images = [
+    ...originalImages.slice(-2), // Last 2 images start mein
+    ...originalImages,           // Asli images
+    ...originalImages.slice(0, 2) // Pehli 2 images end mein
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(1);
+  const [currentIndex, setCurrentIndex] = useState(2); // Start from index 2 (real first image)
   const [isTransitioning, setIsTransitioning] = useState(true);
-  const totalImages = originalImages.length;
+  const [itemsToShow, setItemsToShow] = useState(2);
+  const sliderRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setItemsToShow(window.innerWidth < 768 ? 1 : 2);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // 2. Seamless Jump Logic
+  const handleTransitionEnd = () => {
+    // Agar hum end wali clones pe pohanch gaye hain
+    if (currentIndex >= images.length - itemsToShow) {
+      setIsTransitioning(false); // Animation band karo
+      setCurrentIndex(2);        // Wapas real first image pe jump karo
+    }
+    // Agar hum start wali clones pe pohanch gaye hain
+    if (currentIndex <= 1) {
+      setIsTransitioning(false);
+      setCurrentIndex(images.length - itemsToShow - 2);
+    }
+  };
+
+  // Transition wapas on karne ke liye jab state change ho
+  useEffect(() => {
+    if (!isTransitioning) {
+      // Small timeout taake browser jump detect karle phir animation on ho
+      setTimeout(() => setIsTransitioning(true), 50);
+    }
+  }, [isTransitioning]);
 
   const nextSlide = () => {
-    setCurrentIndex((prev) => prev + 1);
-    setIsTransitioning(true);
+    if (isTransitioning) {
+      setCurrentIndex((prev) => prev + 1);
+    }
   };
 
   const prevSlide = () => {
-    setCurrentIndex((prev) => prev - 1);
-    setIsTransitioning(true);
+    if (isTransitioning) {
+      setCurrentIndex((prev) => prev - 1);
+    }
   };
 
-  useEffect(() => {
-    if (currentIndex === slides.length - 1) {
-      const timer = setTimeout(() => {
-        setIsTransitioning(false);
-        setCurrentIndex(1);
-      }, 700);
-      return () => clearTimeout(timer);
-    }
-
-    if (currentIndex === 0) {
-      const timer = setTimeout(() => {
-        setIsTransitioning(false);
-        setCurrentIndex(totalImages);
-      }, 700);
-      return () => clearTimeout(timer);
-    }
-  }, [currentIndex, slides.length, totalImages]);
-
   return (
-    <div className="w-full max-w-[1100px] mx-auto bg-gray-50 px-4 py-16">
-      <div className="relative flex flex-col items-center group">
+    <div className="w-full max-w-5xl mx-auto py-12 px-4">
+      <div className="relative group">
         
-        <div className="relative flex items-center w-full">
-            {/* Left Button */}
-            <button onClick={prevSlide} className="absolute -left-0 z-30 p-4 bg-white shadow-2xl rounded-full hover:bg-gray-50 active:scale-90 transition-all">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-            </svg>
-            </button>
+        {/* Navigation Buttons */}
+        <button onClick={prevSlide} className="absolute -left-4 top-1/2 -translate-y-1/2 z-30 p-3 bg-white/90 shadow-lg rounded-full hover:bg-white transition-all border border-gray-100 hidden md:block">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" /></svg>
+        </button>
 
-            {/* Slider Window */}
-            <div className="overflow-hidden w-full rounded-[40px]">
-            <div
-                className={`flex ${isTransitioning ? 'transition-transform duration-700 ease-in-out' : 'transition-none'}`}
-                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-            >
-                {slides.map((img, index) => (
-                <div
-                    key={index}
-                    className="min-w-full h-[420px] md:h-[520px] overflow-hidden rounded-[40px] shadow-2xl bg-gray-100"
-                >
-                    <img src={img} alt={`Slide ${index}`} className="w-full h-full object-cover" />
+        <button onClick={nextSlide} className="absolute -right-4 top-1/2 -translate-y-1/2 z-30 p-3 bg-white/90 shadow-lg rounded-full hover:bg-white transition-all border border-gray-100 hidden md:block">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" /></svg>
+        </button>
+
+        {/* Slider Window */}
+        <div className="overflow-hidden rounded-3xl">
+          <div 
+            className={`flex ${isTransitioning ? 'transition-transform duration-500 ease-out' : ''}`}
+            style={{ transform: `translateX(-${currentIndex * (100 / itemsToShow)}%)` }}
+            onTransitionEnd={handleTransitionEnd}
+          >
+            {images.map((img, index) => (
+              <div 
+                key={index}
+                className="shrink-0 px-2"
+                style={{ width: `${100 / itemsToShow}%` }}
+              >
+                <div className="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gray-200 shadow-md">
+                  <img src={img} alt="" className="h-full w-full object-cover" />
                 </div>
-                ))}
-            </div>
-            </div>
-
-            {/* Right Button */}
-            <button onClick={nextSlide} className="absolute -right-0 z-30 p-4 bg-white shadow-2xl rounded-full hover:bg-gray-50 active:scale-90 transition-all">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-            </svg>
-            </button>
+              </div>
+            ))}
+          </div>
         </div>
 
-        
-        
+        {/* Dots (Linked to Original Index) */}
+        <div className="mt-8 flex justify-center gap-2">
+          {originalImages.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => {
+                setIsTransitioning(true);
+                setCurrentIndex(i + 2);
+              }}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                (currentIndex - 2 + originalImages.length) % originalImages.length === i 
+                ? 'w-8 bg-[#B8860B]' : 'w-2 bg-gray-300'
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

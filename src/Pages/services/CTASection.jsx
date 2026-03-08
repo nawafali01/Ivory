@@ -5,7 +5,7 @@ import React from "react";
 export default function CTASection({
   title = "Ready to Build Better?",
   subtitle = "Contact our team today for a comprehensive consultation and a detailed quote\nfor your next project.",
-  buttonText = "Request a Quote",
+  buttonText = "Contact Us",
   onButtonClick,
   href = "#",
 }) {
@@ -32,10 +32,10 @@ export default function CTASection({
                   {...(onButtonClick
                     ? { type: "button", onClick: onButtonClick }
                     : { href })}
-                  className="inline-flex h-12 items-center justify-center gap-2.5 rounded-lg bg-[#158BFF] px-7 text-[13px] font-bold text-white shadow-[0_14px_34px_rgba(21,139,255,0.25)] transition active:translate-y-[1px] hover:bg-[#0f7fe9]"
+                  className="inline-flex h-11 items-center justify-center rounded-lg border border-white/10 bg-white/10 px-12 text-[13px] font-bold text-white/90 backdrop-blur-[6px] transition active:translate-y-[1px] hover:bg-white/15"
                 >
                   {/* small document icon like the image */}
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  {/* <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                     <path
                       d="M7 3h7l3 3v15H7V3Z"
                       stroke="currentColor"
@@ -48,7 +48,7 @@ export default function CTASection({
                       strokeWidth="2"
                       strokeLinecap="round"
                     />
-                  </svg>
+                  </svg> */}
                   {buttonText}
                 </ButtonTag>
               </div>

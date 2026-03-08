@@ -1,11 +1,18 @@
-// MaintenanceServicesSection.jsx (React + Tailwind)
-
 import React from "react";
+// Heroicons Import
+import { 
+  CloudIcon, 
+  WrenchScrewdriverIcon, 
+  BoltIcon, 
+  WrenchIcon 
+} from "@heroicons/react/24/outline";
 
-function IconBox({ children }) {
+// IconBox: Centered background aur icon
+function IconBox({ Icon }) {
   return (
-    <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-[#EAF3FF]">
-      <div className="text-[#158BFF]">{children}</div>
+    // mx-auto lagaya taake box khud center ho jaye
+    <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-50 text-[#000000] transition-all duration-300 group-hover:bg-[#158BFF] group-hover:text-white group-hover:rotate-6">
+      <Icon className="h-7 w-7" strokeWidth={2} />
     </div>
   );
 }
@@ -13,111 +20,65 @@ function IconBox({ children }) {
 const services = [
   {
     title: "HVAC Systems",
-    desc: `Expert climate control installation, seasonal maintenance, and 24/7 emergency repair services for all units.`,
-    icon: (
-      // Snowflake
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M12 2v20M4 6l16 12M20 6L4 18"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <path
-          d="M7 4.5l2 3.5M17 4.5l-2 3.5M7 19.5l2-3.5M17 19.5l-2-3.5"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-      </svg>
-    ),
+    desc: "Expert climate control installation, seasonal maintenance, and 24/7 emergency repair services for all units.",
+    icon: CloudIcon,
   },
   {
     title: "Plumbing",
-    desc: `Full-service plumbing solutions for commercial and residential properties, including pipe repair and water heating.`,
-    icon: (
-      // Faucet
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M6 10h12M9 10V7a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v3"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <path
-          d="M8 10v6a3 3 0 0 0 3 3h2a3 3 0 0 0 3-3v-6"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-        />
-        <path
-          d="M18.5 19.5c.7 0 1.25-.55 1.25-1.25S18.5 16 18.5 16s-1.25 1.55-1.25 2.25.55 1.25 1.25 1.25Z"
-          fill="currentColor"
-        />
-      </svg>
-    ),
+    desc: "Full-service plumbing solutions for commercial and residential properties, including pipe repair and water heating.",
+    icon: WrenchIcon, 
   },
   {
     title: "Electrical",
-    desc: `Licensed electrical inspections, panel upgrades, wiring, and energy-efficient lighting installations.`,
-    icon: (
-      // Bolt
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M13 2 5 14h7l-1 8 8-12h-7l1-8Z"
-          fill="currentColor"
-        />
-      </svg>
-    ),
+    desc: "Licensed electrical inspections, panel upgrades, wiring, and energy-efficient lighting installations.",
+    icon: BoltIcon,
   },
   {
     title: "General Repairs",
-    desc: `Comprehensive handyman services, structural upkeep, and preventative maintenance for long-term durability.`,
-    icon: (
-      // Wrench
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <path
-          d="M21 7.5a5.5 5.5 0 0 1-7.7 5.1L7.2 18.7a2 2 0 0 1-2.8 0l-.3-.3a2 2 0 0 1 0-2.8l6.1-6.1A5.5 5.5 0 0 1 16.5 3l-2.2 2.2 2.6 2.6L21 7.5Z"
-          fill="currentColor"
-        />
-      </svg>
-    ),
+    desc: "Comprehensive handyman services, structural upkeep, and preventative maintenance for long-term durability.",
+    icon: WrenchScrewdriverIcon,
   },
 ];
 
-function ServiceCard({ icon, title, desc }) {
+function ServiceCard({ icon: Icon, title, desc }) {
   return (
-    <div className="rounded-xl border border-[#E9EEF5] bg-white px-7 py-7 shadow-[0_10px_30px_rgba(15,23,42,0.05)]">
-      <IconBox>{icon}</IconBox>
+    // items-center aur text-center yahan add kiya hai
+    <div className="group flex flex-col items-center text-center relative rounded-3xl border border-slate-100 bg-white p-10 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/10">
+      
+      <IconBox Icon={Icon} />
 
-      <h3 className="mt-5 text-[15px] font-bold text-[#0B1220]">{title}</h3>
+      <h3 className="mt-8 text-xl font-bold text-black tracking-tight">{title}</h3>
 
-      <p className="mt-3 text-[12px] leading-5 text-[#6B7280]">{desc}</p>
+      <p className="mt-4 text-[14px] leading-relaxed text-slate-500">
+        {desc}
+      </p>
+      
+      {/* Bottom accent line (Optional: already centered due to card padding) */}
+      <div className="mt-6 h-1 w-12 rounded-full bg-slate-100 transition-all duration-300 group-hover:w-20 group-hover:bg-[#158BFF]" />
     </div>
   );
 }
 
 export default function MaintenanceServicesSection() {
   return (
-    <section className="bg-[#F6F8FC] py-20">
-      <div className="mx-auto w-full max-w-6xl px-6">
-        {/* Header (left aligned like image) */}
-        <div>
-          <p className="text-[11px] font-bold uppercase tracking-[0.22em] text-[#158BFF]">
-            PROFESSIONAL SOLUTIONS
-          </p>
+    <section className="bg-slate-50/50 py-24">
+      <div className="mx-auto max-w-7xl px-6">
+        
+        {/* Header Section (Already Centered) */}
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto">
+          <span className="text-[14px] font-bold uppercase tracking-[0.3em] text-[#000000]">
+            Professional Solutions
+          </span>
 
-          <h2 className="mt-3 text-[34px] font-extrabold leading-none text-[#0B1220]">
+          <h2 className="mt-2 text-4xl font-extrabold tracking-tight text-black sm:text-5xl leading-tight">
             Maintenance Services
           </h2>
-
-          <div className="mt-4 h-[4px] w-14 rounded bg-[#158BFF]" />
         </div>
 
-        {/* Cards row */}
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((s) => (
-            <ServiceCard key={s.title} {...s} />
+        {/* Services Grid */}
+        <div className="mt-20 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          {services.map((service) => (
+            <ServiceCard key={service.title} {...service} />
           ))}
         </div>
       </div>
