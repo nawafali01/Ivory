@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <>
     {/* justify-center aur heavy bottom padding se content uper move hoga */}
-    <section className="relative min-h-screen w-full flex flex-col justify-center overflow-hidden bg-slate-900 pt-16 pb-40">
+    <section className="relative h-[100vh] w-full flex flex-col justify-center overflow-hidden bg-slate-900   ">
       
       <div className="absolute inset-0 z-0">
         {/* <img 
@@ -18,7 +18,7 @@ const Hero = () => {
         <img 
           src={logo1}
           alt="Construction Site" 
-          className="w-full h-full object-cover opacity-50"
+          className="w-full h-full object-cover opacity-60"
         />
         <div className="absolute inset-0 bg-black/50"></div>
       </div>
@@ -36,7 +36,7 @@ const Hero = () => {
           </div>
 
           {/* Main Heading: Ab ye kafi balanced size mein hai */}
-          <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-[1.2] mb-5 tracking-tighter">
+          <h1 className="text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-black text-white leading-[1.2] mb-5 tracking-tighter">
             BUILDING YOUR <br className="hidden md:block" /> 
             <span className="text-white">VISION</span> TO REALITY
           </h1>
