@@ -41,15 +41,46 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div>
-            <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white border-b border-white pb-2">Contact Info</h3>
-            <div className="space-y-2 text-sm sm:text-base">
-              <p className="text-gray-300">Email: <a href="mailto:info@ivory.com" className="text-white hover:text-green-500">info@ivory.com</a></p>
-              <p className="text-gray-300">Phone: <a href="tel:+1234567890" className="text-white hover:text-green-500">+1 (234) 567-890</a></p>
-              <p className="text-gray-300">Address: 123 Main Street, City, Country</p>
-            </div>
-          </div>
+  <div>
+  <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white border-b border-white pb-2">
+    Contact Info
+  </h3>
 
+  <div className="space-y-2 text-sm sm:text-base">
+    <p className="text-gray-300">
+      Email:{" "}
+      <a
+        href="mailto:Ivoryjabbar@gmail.com"
+        className="text-white hover:text-green-500 transition-colors"
+      >
+        Ivoryjabbar@gmail.com
+      </a>
+    </p>
+
+    <p className="text-gray-300">
+      Phone:{" "}
+      {/* Remove spaces in the href for better compatibility with some dialers */}
+      <a
+        href="tel:+971544605759"
+        className="text-white hover:text-green-500 transition-colors"
+      >
+        +971 54 460 5759
+      </a>
+    </p>
+
+    <p className="text-gray-300">
+      Address:{" "}
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=Trio+Building+34+Street+Al+Barsha+1+Dubai+UAE"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-white hover:text-blue-400 transition-colors"
+      >
+        Trio Building 34 Street Al Barsha 1, Dubai UAE
+      </a>
+    </p>
+  </div>
+</div>
           {/* Social Links */}
           {/* <div>
             <h3 className="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-white border-b border-white pb-2">Follow Us</h3>

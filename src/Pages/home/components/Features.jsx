@@ -36,7 +36,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="min-h-screen bg-gray-50 py-16 px-6">
+    <section className="min-h-screen bg-gray-50  py-16 px-6">
       <div className="max-w-6xl mx-auto">
         
         {/* Heading Section */}
@@ -58,12 +58,12 @@ const Features = () => {
         {/* Cards Grid with Strong Hover */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {features.map((feature) => (
-            <div 
-              key={feature.id} 
-              className="group relative bg-gray-100 p-8 rounded-2xl border border-gray-100 
+            <div
+              key={feature.id}
+              className="group relative bg-white p-8 rounded-2xl border border-gray-200
                          flex items-start space-x-6 cursor-pointer
-                         transition-all duration-500 ease-in-out
-                         hover:-translate-y-3 hover:shadow-[0_20px_50px_rgba(0,0,0,0.1)] hover:border-blue-200"
+                         transition-all duration-300 ease-in-out
+                         hover:-translate-y-2 hover:shadow-lg hover:border-blue-200"
             >
               {/* Icon Container */}
               <div className={`flex-shrink-0 w-24 h-24 border border-gray-100 rounded-xl 

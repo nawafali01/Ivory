@@ -36,7 +36,7 @@ const Cards = () => {
           <Link
             key={card.id}
             to={card.link}
-            className="relative group w-full h-64 sm:h-96 lg:h-full overflow-hidden block"
+            className="relative group w-full h-64  sm:h-96 lg:h-full overflow-hidden block"
           >
             {/* Background Image */}
             <img
