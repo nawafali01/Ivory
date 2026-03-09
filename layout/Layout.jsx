@@ -5,7 +5,7 @@ import Footer from '../src/components/Footer'
 
 const Layout = () => {
   const whatsappNumber = '+971544605759' // Replace with your WhatsApp number
-  const whatsappMessage = 'Hello! How can we help you?'
+  const whatsappMessage = "Hi! I’m interested in your maintenance services. Can you provide more details?"
 
   const handleWhatsAppClick = () => {
     const encodedMessage = encodeURIComponent(whatsappMessage)
