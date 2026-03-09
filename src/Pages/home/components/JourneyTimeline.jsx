@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { FaChevronLeft, FaChevronRight, FaRegClock } from "react-icons/fa";
 
 const milestones = [
-  { title: "ICG Fitout Started", year: "2020" },
+  { title: "ICG Fitout Started", year: "2021" },
   { title: "Team Expansion", year: "2022" },
   { title: "Record Breaking Project", year: "2023" },
   { title: "Joinery Factory Launch", year: "2023" },

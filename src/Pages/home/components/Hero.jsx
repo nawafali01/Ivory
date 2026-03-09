@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { CheckBadgeIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
 // import logo from '../../../assets/images/heroimg.jpg' // Keep if needed
 import logo1 from '../../../assets/images/luxury-architecture-exterior-design.jpg'
@@ -50,16 +51,22 @@ const Hero = () => {
           {/* Buttons: Sleek and small sizing + Blur Effect */}
           <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-12">
             
-            {/* CHANGES HERE: 'Explore Projects' Button with Blur */}
-            <button className="group flex items-center justify-center gap-2 backdrop-blur-sm bg-white/10 text-white hover:bg-white hover:text-black font-bold py-2.5 px-6 uppercase rounded-md transition-all border border-white/20 hover:border-white text-xs md:text-sm shadow-md shadow-black/30">
+            {/* CHANGES HERE: 'Explore Projects' Button (link to projects page) */}
+            <Link
+              to="/our-project"
+              className="group flex items-center justify-center gap-2 backdrop-blur-sm bg-white/10 text-white hover:bg-white hover:text-black font-bold py-2.5 px-6 uppercase rounded-md transition-all border border-white/20 hover:border-white text-xs md:text-sm shadow-md shadow-black/30"
+            >
               <span>Explore Projects</span>
               <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </button>
+            </Link>
             
-            {/* CHANGES HERE: 'Get a Quote' Button with Blur */}
-            <button className="backdrop-blur-md bg-white/10 text-white hover:bg-yellow-500 hover:text-black font-bold py-2.5 px-6 uppercase transition-all rounded-md border border-white/20 hover:border-yellow-500 text-xs md:text-sm shadow-lg">
-             Get a Quote
-            </button>
+            {/* CHANGES HERE: 'Get a Quote' Button (link to Contact page) */}
+            <Link
+              to="/contact"
+              className="backdrop-blur-md bg-white/10 text-white hover:bg-yellow-500 hover:text-black font-bold py-2.5 px-6 uppercase transition-all rounded-md border border-white/20 hover:border-yellow-500 text-xs md:text-sm shadow-lg"
+            >
+              Get a Quote
+            </Link>
           </div>
 
           {/* Stats Section: Minimalist look */}

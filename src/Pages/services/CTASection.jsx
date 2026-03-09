@@ -1,15 +1,16 @@
 // CTASection.jsx (React + Tailwind) — matches the image, with ONLY ONE button
 
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function CTASection({
   title = "Ready to Build Better?",
   subtitle = "Contact our team today for a comprehensive consultation and a detailed quote\nfor your next project.",
   buttonText = "Contact Us",
   onButtonClick,
-  href = "#",
+  href = "/contact#contact-form",
 }) {
-  const ButtonTag = onButtonClick ? "button" : "a";
+  const ButtonTag = onButtonClick ? "button" : Link;
 
   return (
     <section className="bg-white py-16">
@@ -31,24 +32,9 @@ export default function CTASection({
                 <ButtonTag
                   {...(onButtonClick
                     ? { type: "button", onClick: onButtonClick }
-                    : { href })}
+                    : { to: href })}
                   className="inline-flex h-11 items-center justify-center rounded-lg border border-white/10 bg-white/10 px-12 text-[13px] font-bold text-white/90 backdrop-blur-[6px] transition active:translate-y-[1px] hover:bg-white/15"
                 >
-                  {/* small document icon like the image */}
-                  {/* <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M7 3h7l3 3v15H7V3Z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M9 12h6M9 16h6"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                  </svg> */}
                   {buttonText}
                 </ButtonTag>
               </div>

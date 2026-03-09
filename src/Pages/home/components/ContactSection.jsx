@@ -28,7 +28,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="bg-gray-50 w-full min-h-screen flex items-center py-10 md:py-16">
+    <section id="contact-form" className="bg-gray-50 w-full min-h-screen flex items-center py-10 md:py-16">
       <div className="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center px-6">
 
         {/* LEFT SIDE - Form */}

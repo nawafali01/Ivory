@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import hero from '../../assets/images/servicehero.jpg'
 
 export default function Servicehero() {
@@ -31,25 +32,25 @@ export default function Servicehero() {
   <span className="text-white">&amp; Maintenance Services</span>
 </h1>
           <p className="mx-auto mt-5 max-w-[720px] text-sm font-semibold leading-relaxed text-white/65">
-            Building excellence and maintaining your assets with precision,
-            <br className="hidden sm:block" />
-            integrity, and industry-leading care since 1998.
-          </p>
+  Your assets deserve the gold standard of care. We combine decades of 
+  <br className="hidden sm:block" /> 
+  expertise with modern precision to keep your world running perfectly.
+</p>
 
           <div className="mt-7 flex flex-wrap items-center justify-center gap-3.5">
-            <a
-              href="#"
- className="inline-flex h-11 items-center justify-center rounded-lg border border-white/10 bg-white/10 px-6 text-[13px] font-bold text-white/90 backdrop-blur-[6px] transition active:translate-y-[1px] hover:bg-white/15"
+            <Link
+              to="/our-project"
+              className="inline-flex h-11 items-center justify-center rounded-lg border border-white/10 bg-white/10 px-6 text-[13px] font-bold text-white/90 backdrop-blur-[6px] transition active:translate-y-[1px] hover:bg-white/15"
             >
               Our Projects
-            </a>
+            </Link>
 
-            <a
-              href="#"
+            <Link
+              to="/contact"
               className="inline-flex h-11 items-center justify-center rounded-lg border border-white/10 bg-white/10 px-6 text-[13px] font-bold text-white/90 backdrop-blur-[6px] transition active:translate-y-[1px] hover:bg-white/15"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       </div>

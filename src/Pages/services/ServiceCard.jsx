@@ -1,94 +1,58 @@
 import React from 'react';
 import { 
-  WrenchScrewdriverIcon, 
-  PaintBrushIcon, 
-  HomeModernIcon, 
-  BoltIcon, 
-  CubeIcon, 
-  HomeIcon, 
-  SunIcon
-} from '@heroicons/react/24/solid';
-
-// Custom Drop Icon
-const DropIcon = () => (
-  <svg viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
-    <path d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12 18a6 6 0 110-12 6 6 0 010 12z" />
-  </svg>
-);
+  FaWrench, 
+  FaPaintRoller, 
+  FaLeaf, 
+  FaBolt, 
+  FaHammer, 
+  FaHome, 
+  FaSnowflake, 
+  FaSwimmingPool, 
+  FaThLarge 
+} from 'react-icons/fa';
+import { MdOutlineWaterDrop } from 'react-icons/md';
 
 const ServicesCard = () => {
   const services = [
-    {
-      title: "Plumbing",
-      desc: "Resolving leaks, pipe repairs, and faucet installations with precision and efficiency.",
-      icon: <DropIcon />
-    },
-    {
-      title: "Renovation",
-      desc: "Transforming spaces with expert craftsmanship and innovative design for stunning home makeovers.",
-      icon: <WrenchScrewdriverIcon className="w-8 h-8" />
-    },
-    {
-      title: "Painting",
-      desc: "Elevating interiors and exteriors with flawless finishes and a spectrum of vibrant colors.",
-      icon: <PaintBrushIcon className="w-8 h-8" />
-    },
-    {
-      title: "Landscaping",
-      desc: "We specialize in designing and maintaining beautiful, functional gardens and landscapes tailored to your preferences.",
-      icon: <HomeModernIcon className="w-8 h-8" />
-    },
-    {
-      title: "Electrical Work",
-      desc: "Ensuring safety and functionality through skilled electrical installations and troubleshooting services.",
-      icon: <BoltIcon className="w-8 h-8" />
-    },
-    {
-      title: "Carpentry",
-      desc: "Crafting custom solutions and precise installations for functional and aesthetic woodworking projects.",
-      icon: <CubeIcon className="w-8 h-8" />
-    },
-    {
-      title: "Roofing",
-      desc: "Protecting homes with professional roofing solutions, repairs, and maintenance for lasting durability.",
-      icon: <HomeIcon className="w-8 h-8" />
-    },
-    {
-      title: "AC Cleaning",
-      desc: "We offer expert maintenance, repair, and installation services tailored to meet your specific needs.",
-      icon: <SunIcon className="w-8 h-8" />
-    }
+    { title: "Plumbing", desc: "Resolving leaks, pipe repairs, and faucet installations with precision and efficiency.", icon: <MdOutlineWaterDrop className="w-9 h-9" /> },
+    { title: "Renovation", desc: "Transforming spaces with expert craftsmanship and innovative design for stunning home makeovers.", icon: <FaWrench className="w-8 h-8" /> },
+    { title: "Painting", desc: "Elevating interiors and exteriors with flawless finishes and a spectrum of vibrant colors.", icon: <FaPaintRoller className="w-8 h-8" /> },
+    { title: "Landscaping", desc: "We specialize in designing and maintaining beautiful, functional gardens and landscapes tailored to your preferences.", icon: <FaLeaf className="w-8 h-8" /> },
+    { title: "Electrical Work", desc: "Ensuring safety and functionality through skilled electrical installations and troubleshooting services.", icon: <FaBolt className="w-8 h-8" /> },
+    { title: "Carpentry", desc: "Crafting custom solutions and precise installations for functional and aesthetic woodworking projects.", icon: <FaHammer className="w-8 h-8" /> },
+    { title: "Roofing", desc: "Protecting homes with professional roofing solutions, repairs, and maintenance for lasting durability.", icon: <FaHome className="w-8 h-8" /> },
+    { title: "AC Cleaning", desc: "We offer expert maintenance, repair, and installation services tailored to meet your specific needs.", icon: <FaSnowflake className="w-8 h-8" /> },
+    { title: "Pool Construction", desc: "Designing and building luxury swimming pools with advanced filtration and stunning aesthetics.", icon: <FaSwimmingPool className="w-9 h-9" /> },
+    { title: "Tiling & Flooring", desc: "Expert installation of premium tiles and marble for a sophisticated and durable floor finish.", icon: <FaThLarge className="w-8 h-8" /> }
   ];
 
   return (
     <div className="bg-gray-50 py-20 px-6 text-center">
-      {/* Container for Heading and Tag */}
       <div className="max-w-7xl mx-auto mb-16">
-        {/* Top small div (Services Tag) */}
         <div className="inline-block px-4 py-1 mb-4 text-sm font-semibold tracking-wider text-white uppercase bg-black rounded-full">
           Services
         </div>
-
-        {/* Main Section Heading */}
-        <h6 className="text-2xl md:text-2xl font-bold text-black">
+        <h6 className="text-2xl md:text-3xl font-bold text-black">
           Complete Maintenance Excellence for Your Home
         </h6>
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-x-8 gap-y-16">
+      {/* Grid Update: Added flex wrap and justify-center for the last row */}
+      <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-x-8 gap-y-16">
         {services.map((item, index) => (
-          <div key={index} className="flex flex-col items-center text-center group">
+          <div 
+            key={index} 
+            className="flex flex-col items-center text-center group w-full sm:w-[calc(50%-2rem)] lg:w-[calc(25%-2rem)]"
+          >
             {/* Icon Container */}
-            <div className="text-black mb-6 transition-transform duration-300 group-hover:scale-110">
+            <div className="text-black mb-6 transition-all duration-300 group-hover:scale-110 group-hover:text-blue-500">
               {item.icon}
             </div>
             
-            {/* Heading */}
             <h3 className="text-black text-xl font-semibold mb-4 tracking-wide">
               {item.title}
             </h3>
             
-            {/* Paragraph */}
             <p className="text-gray-400 text-sm leading-relaxed max-w-[250px]">
               {item.desc}
             </p>
