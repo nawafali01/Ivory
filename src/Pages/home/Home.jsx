@@ -9,6 +9,7 @@ import JourneyTimeline from './components/JourneyTimeline'
 import ContactSection from './components/ContactSection'
 import LocationSection from '../contact/LocationSection'
 import ServicesCard from '../services/ServiceCard'
+import StatsSection from './components/StatsSection'
 
 
 
@@ -19,6 +20,7 @@ const Home = () => {
       <Hero />
       {/* <Cards /> */}
       {/* <Excellence/> */}
+     <StatsSection/>
       <ServicesCard/>
       <SmoothSlider/>
       <Awards/>

@@ -6,14 +6,18 @@ const LocationSection = () => {
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-semibold text-black">
-            Visit Our Clinic
-          </h2>
-          <p className="text-gray-600 mt-3">
-            Ivory Aesthetics Clinic
-          </p>
-        </div>
+       <div className="text-center mb-12">
+  <p className="text-sm font-semibold tracking-[0.25em] text-black uppercase mb-2">
+    Find Us On The Ground
+  </p>
+  <h2 className="text-4xl font-bold text-gray-900 leading-tight">
+    Visit <span className="text-amber-600">ICG Technical</span> Services LLC
+  </h2>
+  {/* <div className="w-16 h-1 bg-amber-600 mx-auto mt-4 mb-4 rounded"></div> */}
+  <p className="text-gray-800 mt-2 max-w-md mx-auto text-sm">
+    Our team is ready to bring your project to life — stop by and let's build something great.
+  </p>
+</div>
 
         {/* Map Container */}
         <div className="w-full h-[500px] rounded-2xl overflow-hidden shadow-xl">
@@ -26,7 +30,7 @@ const LocationSection = () => {
             allowFullScreen=""
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Ivory Aesthetics Clinic Location"
+            title="I C G Technical Services LLC"
           ></iframe>
         </div>
 

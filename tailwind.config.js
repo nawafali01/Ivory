@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         mont: ["Montserrat", "sans-serif"], // Custom font
+        rounded: ["ui-rounded", "system-ui", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
       },
       fontSize: {
         heading: ["48px", "56px"],      // H1

@@ -26,7 +26,7 @@ const JourneyTimeline = () => {
     <div className="relative bg-[#F9FAFB] py-24 px-4 sm:px-8">
       {/* Header Section */}
       <div className="mb-20 text-center">
-        <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#B8860B]">
+        <p className="text-[14px] font-semibold uppercase tracking-[0.3em] text-black">
           OUR LEGACY
         </p>
         <h2 className="mt-4 text-[32px] md:text-[40px] font-extrabold leading-tight text-[#0B1220] max-w-4xl mx-auto">

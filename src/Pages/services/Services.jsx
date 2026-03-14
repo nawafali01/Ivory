@@ -9,12 +9,13 @@ import CTASection from './CTASection'
 const Services = () => {
   return (
     <>
-    <Servicehero/>
-   <MaintenanceServicesSection/>
-   <WhyChooseSection/>
-   <WorkflowSection/>
-   <CTASection/>
-    {/* <ServicesCard/> */}
+      <Servicehero />
+     
+      <MaintenanceServicesSection />
+      <WhyChooseSection />
+      <WorkflowSection />
+      <CTASection />
+      {/* <ServicesCard/> */}
     </>
   )
 }

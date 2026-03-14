@@ -1,10 +1,65 @@
-import React from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { CheckBadgeIcon, ArrowRightIcon } from '@heroicons/react/24/solid';
 // import logo from '../../../assets/images/heroimg.jpg' // Keep if needed
 import logo1 from '../../../assets/images/luxury-architecture-exterior-design.jpg'
 
+const useTypewriter = (words, { typeSpeed = 100, deleteSpeed = 50, delay = 1200 } = {}) => {
+  const [text, setText] = useState('')
+  const [index, setIndex] = useState(0)
+  const [isDeleting, setIsDeleting] = useState(false)
+
+  useEffect(() => {
+    const currentWord = words[index % words.length]
+    const updateText = () => {
+      setText((prev) => {
+        const fullText = currentWord
+        const updated = isDeleting
+          ? fullText.substring(0, prev.length - 1)
+          : fullText.substring(0, prev.length + 1)
+        return updated
+      })
+
+      if (!isDeleting && text === currentWord) {
+        setTimeout(() => setIsDeleting(true), delay)
+      } else if (isDeleting && text === '') {
+        setIsDeleting(false)
+        setIndex((prev) => prev + 1)
+      }
+    }
+
+    const timeout = setTimeout(
+      updateText,
+      isDeleting ? deleteSpeed : typeSpeed,
+    )
+
+    return () => clearTimeout(timeout)
+  }, [text, isDeleting, index, words, typeSpeed, deleteSpeed, delay])
+
+  return text
+}
+
 const Hero = () => {
+  const serviceText = useTypewriter(
+    [
+      "Plumbing Services",
+      "Electrical Services",
+      "Renovation Services",
+      "Painting Services",
+      "Carpentry Services",
+      "AC Cleaning Services",
+      "Roofing Services",
+      "Landscaping Services",
+      "Pool Construction",
+      "Tiling & Flooring",
+    ],
+    {
+      typeSpeed: 80,
+      deleteSpeed: 40,
+      delay: 1500,
+    },
+  )
+
   return (
     <>
     {/* justify-center aur heavy bottom padding se content uper move hoga */}
@@ -38,18 +93,19 @@ const Hero = () => {
 
           {/* Main Heading: Ab ye kafi balanced size mein hai */}
           <h1 className="text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-black text-white leading-[1.2] mb-5 tracking-tighter">
-            BUILDING YOUR <br className="hidden md:block" /> 
-            <span className="text-white">VISION</span> TO REALITY
+            ICG Technical Services LLC
           </h1>
+          <h2 className="text-xl md:text-2xl lg:text-4xl xl:text-5xl font-black text-white leading-[1.2] mb-5 tracking-tighter">
+            We Provide <span className="text-orange-400">{serviceText}</span>
+          </h2>
 
           {/* Subtext: Normal text size */}
           <p className="text-gray-300 text-sm md:text-base lg:text-lg max-w-xl mb-8 leading-relaxed opacity-90">
-            Leading the industry with precision engineering and sustainable solutions. 
-            We specialize in turning complex blueprints into architectural masterpieces.
+            We provide reliable property maintenance solutions with a skilled team ensuring quality workmanship and dependable service for every project.
           </p>
 
           {/* Buttons: Sleek and small sizing + Blur Effect */}
-          <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-12">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-4 mb-12 items-center sm:items-start">
             
             {/* CHANGES HERE: 'Explore Projects' Button (link to projects page) */}
             <Link
@@ -69,23 +125,7 @@ const Hero = () => {
             </Link>
           </div>
 
-          {/* Stats Section: Minimalist look */}
-          <div className="max-w-2xl grid grid-cols-2 md:grid-cols-3 gap-6 border-t border-white/10 pt-6">
-            <div className="group">
-              <p className="text-xl md:text-3xl font-black text-white group-hover:text-yellow-500 transition-colors">5+</p>
-              <p className="text-gray-400 font-bold uppercase tracking-widest text-[7px] md:text-[9px] mt-1">Years of Experience</p>
-            </div>
-            
-            <div className="group border-l border-white/10 pl-5">
-              <p className="text-xl md:text-3xl font-black text-white group-hover:text-yellow-500 transition-colors">500+</p>
-              <p className="text-gray-400 font-bold uppercase tracking-widest text-[7px] md:text-[9px] mt-1">Projects Completed</p>
-            </div>
-            
-            <div className="group border-l-0 md:border-l border-white/10 md:pl-5 col-span-2 md:col-span-1 mt-3 md:mt-0">
-              <p className="text-xl md:text-3xl font-black text-white group-hover:text-yellow-500 transition-colors">100%</p>
-              <p className="text-gray-400 font-bold uppercase tracking-widest text-[7px] md:text-[9px] mt-1">Satisfaction</p>
-            </div>
-          </div>
+         
 
         </div>
       </div>
