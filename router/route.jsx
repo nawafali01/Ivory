@@ -17,21 +17,22 @@ const router = createBrowserRouter([
       },
       {
         path: '/our-project',
-        element: <Ourprojects/>
+        element: <Ourprojects />
       },
       {
         path: '/services',
-        element: <Services/>
+        element: <Services />
       },
       {
         path: '/contact',
-        element: <Contact/>
+        element: <Contact />
       },
-      {
-        path: '*',
-        element: <NotFound404 />
-      }
     ]
+  },
+  // 404 — Layout ke bahar, no navbar/footer
+  {
+    path: '*',
+    element: <NotFound404 />
   }
 ])
 

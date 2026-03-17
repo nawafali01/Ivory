@@ -9,7 +9,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="bg-black  sticky top-0 z-50">
+    <nav className="bg-black sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         {/* Logo - Left */}
         <div className="flex items-center ml-4 gap-2 flex-shrink-0">
@@ -37,14 +37,14 @@ const Navbar = () => {
 
         {/* Social Icons - Right */}
         <div className="hidden md:flex gap-3 lg:gap-4 flex-shrink-0">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-500 text-lg">
+          <a href="https://www.facebook.com/people/ICG-Technical-Services-LLC/61583672746313/?mibextid=wwXIfr&rdid=VfoUzRcGNYiUDELk&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F176tSJVJrC%2F%3Fmibextid%3DwwXIfr" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-500 text-lg">
             <i className="fab fa-facebook"></i>
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-500 text-lg">
+          <a href="https://www.instagram.com/icgtechnicalservices?igsh=OXpkem91b2ljYXc3&utm_source=ig_contact_invite" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-500 text-lg">
             <i className="fab fa-instagram"></i>
           </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-500 text-lg">
-            <i className="fab fa-youtube"></i>
+          <a href="https://www.tiktok.com/@icg.technical.serv?_r=1&_t=ZS-94i5n7rO02b" target="_blank" rel="noopener noreferrer" className="text-white hover:text-green-500 text-lg">
+            <i className="fab fa-tiktok"></i>
           </a>
         </div>
       </div>
@@ -52,4 +52,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;

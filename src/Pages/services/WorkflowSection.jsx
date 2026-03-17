@@ -1,5 +1,4 @@
 import React from "react";
-// Heroicons import (Outline version)
 import { 
   DocumentTextIcon, 
   PencilSquareIcon, 
@@ -33,16 +32,17 @@ const steps = [
 function Step({ Icon, title, desc }) {
   return (
     <div className="relative z-10 flex flex-col items-center text-center">
-      {/* Icon Circle */}
       <div className="flex h-[68px] w-[68px] items-center justify-center rounded-full border-2 border-[#000000] bg-white text-[#000000] transition-transform duration-300 hover:scale-110 shadow-sm">
         <Icon className="h-7 w-7" />
       </div>
 
-      <h4 className="mt-6 text-[14px] font-extrabold uppercase tracking-tight text-[#0B1220]">
+      {/* ✅ H4: text-lg font-extrabold */}
+      <h4 className="mt-6 text-lg font-extrabold uppercase tracking-tight text-[#0B1220]">
         {title}
       </h4>
 
-      <p className="mt-3 max-w-[200px] text-[12px] leading-relaxed text-[#6B7280]">
+      {/* ✅ Body muted: text-sm */}
+      <p className="mt-3 max-w-[200px] text-sm leading-relaxed text-[#6B7280]">
         {desc}
       </p>
     </div>
@@ -55,29 +55,24 @@ export default function WorkflowSection() {
       <div className="mx-auto max-w-6xl px-6">
         {/* Header */}
         <div className="mb-16 text-center">
-          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#000000]">
+          {/* ✅ Eyebrow: text-xs */}
+          <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#000000]">
             OUR WORKFLOW
           </p>
-          <h2 className="mt-2 text-[38px] font-extrabold leading-tight text-[#0B1220]">
+          {/* ✅ H2: text-3xl md:text-4xl */}
+          <h2 className="mt-2 text-3xl md:text-4xl font-extrabold leading-tight text-[#0B1220]">
             The Process to Excellence
           </h2>
         </div>
 
-        {/* Steps Container */}
         <div className="relative mt-20">
-          
-          {/* Custom Connecting Line with End Points */}
           <div className="absolute top-[34px] left-[12%] right-[12%] hidden lg:block">
-            {/* The Main Line */}
             <div className="relative h-[2px] w-full bg-gray-200">
-              {/* Start Dot */}
               <div className="absolute -left-1 -top-[3px] h-2 w-2 rounded-full bg-[#000000]" />
-              {/* End Dot */}
               <div className="absolute -right-1 -top-[3px] h-2 w-2 rounded-full bg-[#000000]" />
             </div>
           </div>
 
-          {/* Grid for Steps */}
           <div className="grid grid-cols-1 gap-16 lg:grid-cols-4 lg:gap-8">
             {steps.map((step, index) => (
               <Step key={index} {...step} />

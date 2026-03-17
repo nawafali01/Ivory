@@ -51,7 +51,9 @@ const Features = () => {
             <div
               key={feature.id}
               className="group relative bg-white p-8 rounded-2xl border border-gray-200
-                         flex items-start space-x-6 cursor-pointer
+                         flex flex-col items-center text-center
+                         md:flex-row md:items-start md:text-left
+                         space-y-4 md:space-y-0 md:space-x-6 cursor-pointer
                          transition-all duration-300 ease-in-out
                          hover:-translate-y-2 hover:shadow-lg hover:border-blue-200"
             >

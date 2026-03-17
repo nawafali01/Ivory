@@ -8,13 +8,13 @@ const SmoothSlider = () => {
     { src: "/images/apart3.jpeg",   title: "Lake Terrace Tower Cluster (D) JLT" },
     { src: "/images/apart4.jpeg",   title: "Media wall work Location; Liv Residence Marina" },
     { src: "/images/apart2nd.jpeg", title: "Lake Terrace Tower Cluster (D) JLT" },
-    { src: "/images/barber.jpeg",   title: "Liv 27 Barbar shop Media City" },
-    { src: "/images/barber1.jpeg",  title: "Liv 27 Barbar shop Media City" },
-    { src: "/images/barber2.jpeg",  title: "Liv 27 Barbar shop Media City" },
-    { src: "/images/barber3.jpeg",  title: "Liv 27 Barbar shop Media City" },
-    { src: "/images/barber4.jpeg",  title: "Liv 27 Barbar shop Media City" },
-    { src: "/images/barber5.jpeg",  title: "Liv 27 Barbar shop Media City" },
-    { src: "/images/barber6.jpeg",  title: "Liv 27 Barbar shop Media City" },
+    { src: "/images/barber.jpeg",   title: "Liv 27 Barber shop Media City" },
+    { src: "/images/barber1.jpeg",  title: "Liv 27 Barber shop Media City" },
+    { src: "/images/barber2.jpeg",  title: "Liv 27 Barber shop Media City" },
+    { src: "/images/barber3.jpeg",  title: "Liv 27 Barber shop Media City" },
+    { src: "/images/barber4.jpeg",  title: "Liv 27 Barber shop Media City" },
+    { src: "/images/barber5.jpeg",  title: "Liv 27 Barber shop Media City" },
+    { src: "/images/barber6.jpeg",  title: "Liv 27 Barber shop Media City" },
   ];
 
   const images = [

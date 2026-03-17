@@ -6,64 +6,61 @@ import {
 
 export function DraggableCardDemo() {
   const items = [
-    {
-      title: "Tyler Durden",
-      image:
-        "https://images.unsplash.com/photo-1732310216648-603c0255c000?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      className: "absolute top-10 left-[20%] rotate-[-5deg]",
-    },
-    {
-      title: "The Narrator",
-      image:
-        "https://images.unsplash.com/photo-1697909623564-3dae17f6c20b?q=80&w=2667&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      className: "absolute top-40 left-[25%] rotate-[-7deg]",
-    },
-    {
-      title: "Iceland",
-      image:
-        "https://images.unsplash.com/photo-1501854140801-50d01698950b?q=80&w=2600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      className: "absolute top-5 left-[40%] rotate-[8deg]",
-    },
-    {
-      title: "Japan",
-      image:
-        "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?q=80&w=3648&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      className: "absolute top-32 left-[55%] rotate-[10deg]",
-    },
-    {
-      title: "Norway",
-      image:
-        "https://images.unsplash.com/photo-1421789665209-c9b2a435e3dc?q=80&w=3542&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      className: "absolute top-20 right-[35%] rotate-[2deg]",
-    },
-    {
-      title: "New Zealand",
-      image:
-        "https://images.unsplash.com/photo-1505142468610-359e7d316be0?q=80&w=3070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      className: "absolute top-24 left-[45%] rotate-[-7deg]",
-    },
-    {
-      title: "Canada",
-      image:
-        "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      className: "absolute top-8 left-[30%] rotate-[4deg]",
-    },
+    { title: "Lake Terrace Tower Cluster (D) JLT", image: "/images/gag 6.jpeg", className: "absolute top-10 left-[10%] rotate-[-5deg]" },
+    { title: "Location: Gold Crest View 2 Cluster (J) JLT", image: "/images/gag7.jpeg", className: "absolute top-12 left-[25%] rotate-[3deg]" },
+    { title: "Location: Gold Crest View 2 Cluster (J) JLT", image: "/images/gag8.jpeg", className: "absolute top-20 left-[40%] rotate-[-8deg]" },
+    { title: "Location: Gold Crest View 2 Cluster (J) JLT", image: "/images/gag9.jpeg", className: "absolute top-15 right-[15%] rotate-[6deg]" },
+    { title: "Location: Gold Crest View 2 Cluster (J) JLT", image: "/images/gag10.jpeg", className: "absolute bottom-20 left-[15%] rotate-[-4deg]" },
+    { title: "Liv Residence Marina", image: "/images/gag5.jpeg", className: "absolute top-40 left-[30%] rotate-[-7deg]" },
+    { title: "Gold Crest View 2 Cluster (J) JLT", image: "/images/gag11.jpeg", className: "absolute bottom-10 right-[20%] rotate-[5deg]" },
+    { title: "Liv 27 Barbar shop Al Barsha 1", image: "/images/gag12.jpeg", className: "absolute top-5 right-[30%] rotate-[-2deg]" },
+    { title: "Liv 27 Barbar shop Media City", image: "/images/gag13.jpeg", className: "absolute bottom-32 left-[45%] rotate-[8deg]" },
+    { title: "Lake Terrace Tower Cluster (D) JLT", image: "/images/gag4.jpeg", className: "absolute top-5 left-[50%] rotate-[8deg]" },
+    { title: "Lake Terrace Tower Cluster (D) JLT", image: "/images/gag3.jpeg", className: "absolute top-32 left-[65%] rotate-[10deg]" },
+    { title: "Lake Terrace Tower Cluster (D) JLT", image: "/images/gag.jpeg", className: "absolute top-20 right-[40%] rotate-[2deg]" },
+    { title: "Lake Terrace Tower Cluster (D) JLT", image: "/images/gag1.jpeg", className: "absolute top-24 left-[55%] rotate-[-7deg]" },
+    { title: "Lake Terrace Tower Cluster (D) JLT", image: "/images/gag2.jpeg", className: "absolute top-8 left-[35%] rotate-[4deg]" },
   ];
+
   return (
-    <DraggableCardContainer className="relative flex min-h-screen w-full items-center justify-center overflow-clip bg-black">
-      <p className="absolute top-1/2 mx-auto max-w-sm -translate-y-3/4 text-center text-2xl font-black text-neutral-400 md:text-4xl dark:text-neutral-800">
-        If its your first day at Fight Club, you have to fight.
-      </p>
-      {items.map((item) => (
-        <DraggableCardBody key={item.title} className={item.className}>
-          <img
-            src={item.image}
-            alt={item.title}
-            className="pointer-events-none relative z-10 h-80 w-80 object-cover"
-          />
-          {/* <h3 className="mt-4 text-center text-2xl font-bold text-neutral-700 dark:text-neutral-300">
-            {item.title}
-          </h3> */}
+    <DraggableCardContainer className="relative flex min-h-screen bg-neutral-50 w-full items-center justify-center overflow-hidden">
+      
+      {/* --- PROFESSIONAL TEXT SECTION --- */}
+      <div className="pointer-events-none absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
+        <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter text-neutral-200/60 dark:text-neutral-900/40">
+          Architecture
+        </h2>
+        <p className="mt-[-10px] max-w-lg text-lg md:text-2xl font-semibold text-neutral-600 dark:text-neutral-400">
+          We don't just build homes, <span className="text-orange-600">we engineer dreams</span> that stand the test of time.
+        </p>
+      </div>
+
+      {/* --- DRAGGABLE CARDS WITH POLAROID BORDER --- */}
+      {items.map((item, i) => (
+        <DraggableCardBody 
+          key={i} 
+          className={`${item.className} p-4 bg-white shadow-[0_20px_50px_rgba(0,0,0,0.15)] border border-neutral-100 rounded-sm hover:z-50 transition-shadow duration-300`}
+        >
+          {/* Image Container */}
+          <div className="relative overflow-hidden bg-neutral-100">
+            <img
+              src={item.image}
+              alt={item.title}
+              className="pointer-events-none h-64 w-64 md:h-72 md:w-72 object-cover"
+            />
+            {/* Subtle Overlay on Image */}
+            <div className="absolute inset-0 bg-black/5 pointer-events-none" />
+          </div>
+
+          {/* Title/Project Info */}
+          <div className="mt-4 max-w-[250px]">
+            <p className="text-[10px] font-bold uppercase tracking-widest text-orange-600">
+              Featured Project
+            </p>
+            <h3 className="mt-1 truncate text-sm font-bold text-neutral-800 dark:text-neutral-200">
+              {item.title}
+            </h3>
+          </div>
         </DraggableCardBody>
       ))}
     </DraggableCardContainer>
