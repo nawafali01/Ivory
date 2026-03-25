@@ -1,10 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom'
-import Layout from '../layout/Layout'
-import NotFound404 from '../src/components/NotFound404'
-import Home from '../src/Pages/home/Home'
-import Ourprojects from '../src/Pages/our-projects/Ourprojects'
-import Services from '../src/Pages/services/Services'
-import Contact from '../src/Pages/contact/Contact'
+import Layout        from '../layout/Layout'
+import NotFound404   from '../src/components/NotFound404'
+import Home          from '../src/Pages/home/Home'
+import Services      from '../src/Pages/services/Services'
+import Contact       from '../src/Pages/contact/Contact'
+import Projects      from '../src/Pages/our-projects/Projects'
+import ProjectDetail from '../src/Pages/our-projects/project-detail/ProjectDetail'
 
 const router = createBrowserRouter([
   {
@@ -16,8 +17,12 @@ const router = createBrowserRouter([
         element: <Home />
       },
       {
-        path: '/our-project',
-        element: <Ourprojects />
+        path: '/projects',
+        element: <Projects />
+      },
+      {
+        path: '/projects/:id',          // ← naya route
+        element: <ProjectDetail />
       },
       {
         path: '/services',
@@ -29,11 +34,10 @@ const router = createBrowserRouter([
       },
     ]
   },
-  // 404 — Layout ke bahar, no navbar/footer
   {
     path: '*',
     element: <NotFound404 />
   }
 ])
 
-export default router
+export default router;

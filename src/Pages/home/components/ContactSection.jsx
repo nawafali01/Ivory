@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import formimg from '../../../assets/images/portrait-engineer-job-site-work-hours.jpg'
+import formimg from '../../../assets/images/portrait-engineer-job-site-work-hours.jpg';
 import emailjs from "@emailjs/browser";
 
 const ContactSection = () => {
@@ -8,23 +8,22 @@ const ContactSection = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_ry2omcs",    // EmailJS Service ID
-        "template_5fsy7sm",   // EmailJS Template ID
-        form.current,
-        "EVpMxe_gL89i1ppzg"     // EmailJS Public Key
-      )
-      .then(
-        (result) => {
-          alert("Message sent successfully!");
-          form.current.reset(); // Form reset after success
-        },
-        (error) => {
-          alert("Failed to send message. Try again.");
-          console.log(error.text);
-        }
-      );
+    emailjs.sendForm(
+      "service_nno0akj",     // Your Service ID
+      "template_23t5c0v",    // Your Template ID
+      form.current,           // Reference to the form
+      "7fQm5XIZkU0R7Jyxl"    // Your Public Key
+    )
+    .then(
+      () => {
+        alert("✅ Message sent successfully!");
+        form.current.reset(); // Clear form after success
+      },
+      (error) => {
+        console.error("EmailJS error:", error);
+        alert(`❌ Failed to send message. Check console for details.`);
+      }
+    );
   };
 
   return (
@@ -47,37 +46,37 @@ const ContactSection = () => {
 
               <input
                 type="text"
-                name="name"
-                placeholder="YOUR NAME"
-                className="w-full bg-gray-50 border-2 border-gray-300 px-4 py-3 text-xs font-bold tracking-widest text-black placeholder-gray-500 focus:border-black focus:bg-white focus:outline-none transition-all rounded-lg"
-                required
-              />
-
-              <input
-                type="tel"
-                name="phone"
-                placeholder="YOUR PHONE NO"
-                className="w-full bg-gray-50 border-2 border-gray-300 px-4 py-3 text-xs font-bold tracking-widest text-black placeholder-gray-500 focus:border-black focus:bg-white focus:outline-none transition-all rounded-lg"
+                name="user_name"          // MUST match template variable
+                placeholder="Your Name"
+                className="w-full bg-gray-50 border-2 border-gray-300 px-4 py-3 text-xs font-bold text-black placeholder-gray-500 focus:border-black focus:bg-white focus:outline-none transition-all rounded-lg"
                 required
               />
 
               <input
                 type="email"
-                name="email"
-                placeholder="YOUR EMAIL"
-                className="w-full bg-gray-50 border-2 border-gray-300 px-4 py-3 text-xs font-bold tracking-widest text-black placeholder-gray-500 focus:border-black focus:bg-white focus:outline-none transition-all rounded-lg"
+                name="user_email"         // MUST match template variable
+                placeholder="Your Email"
+                className="w-full bg-gray-50 border-2 border-gray-300 px-4 py-3 text-xs font-bold text-black placeholder-gray-500 focus:border-black focus:bg-white focus:outline-none transition-all rounded-lg"
+                required
+              />
+
+              <input
+                type="text"
+                name="subject"            // MUST match template variable
+                placeholder="Subject"
+                className="w-full bg-gray-50 border-2 border-gray-300 px-4 py-3 text-xs font-bold text-black placeholder-gray-500 focus:border-black focus:bg-white focus:outline-none transition-all rounded-lg"
                 required
               />
 
               <textarea
-                name="message"
-                rows="4"
-                placeholder="YOUR MESSAGE"
-                className="w-full bg-gray-50 border-2 border-gray-300 px-4 py-3 text-xs font-bold tracking-widest text-black placeholder-gray-500 resize-none focus:border-black focus:bg-white focus:outline-none transition-all rounded-lg"
+                name="message"            // MUST match template variable
+                rows="5"
+                placeholder="Your Message"
+                className="w-full bg-gray-50 border-2 border-gray-300 px-4 py-3 text-xs font-bold text-black placeholder-gray-500 resize-none focus:border-black focus:bg-white focus:outline-none transition-all rounded-lg"
                 required
               ></textarea>
 
-              {/* Hidden field for current time */}
+              {/* Hidden time field (optional) */}
               <input
                 type="hidden"
                 name="time"
@@ -106,7 +105,6 @@ const ContactSection = () => {
             <div className="absolute inset-0 bg-black/5 pointer-events-none"></div>
           </div>
         </div>
-
       </div>
     </section>
   );

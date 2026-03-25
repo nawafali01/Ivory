@@ -30,7 +30,7 @@ const Navbar = () => {
           isOpen ? 'flex' : 'hidden'
         } md:flex absolute md:relative top-16 md:top-0 left-0 right-0 md:left-auto md:right-auto flex-col md:flex-row list-none gap-4 md:gap-6 lg:gap-8 bg-black md:bg-transparent p-4 md:p-0 w-full md:w-auto`}>
           <li><Link to="/" className="text-white hover:text-green-500 text-sm sm:text-base" onClick={() => setIsOpen(false)}>Home</Link></li>
-          <li><Link to="/our-project" className="text-white hover:text-green-500 text-sm sm:text-base" onClick={() => setIsOpen(false)}>Our Projects</Link></li>
+          <li><Link to="/Projects" className="text-white hover:text-green-500 text-sm sm:text-base" onClick={() => setIsOpen(false)}>Our Projects</Link></li>
           <li><Link to="/services" className="text-white hover:text-green-500 text-sm sm:text-base" onClick={() => setIsOpen(false)}>Services</Link></li>
           <li><Link to="/contact" className="text-white hover:text-green-500 text-sm sm:text-base" onClick={() => setIsOpen(false)}>Contact Us</Link></li>
         </ul>
