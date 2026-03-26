@@ -24,7 +24,7 @@ export const PROJECTS_DATA = [
   desc: "A refined single-room renovation within Lake Terrace Tower Cluster D, JLT — transforming a compact space with modern finishes and smart design.",
   body: "This single-room renovation at Lake Terrace Tower Cluster D, JLT involved a complete interior overhaul — fresh wall treatments, flooring upgrade, and modern fixtures delivering a clean, contemporary living space.",
   location: "LAKE TERRACE TOWER CLUSTER (D), JLT, DUBAI",
-  image: "/images/barber4.jpeg",
+  image: "/images/room2.jpeg",
 },
  {
   id: 4,
@@ -45,39 +45,39 @@ export const PROJECTS_DATA = [
   image: "/images/showroom1.jpeg",
 },
   {
-    id: 6,
-    cat: "renovation",
-    title: "SKYLINE LOFTS",
-    desc: "Transformation of an old textile factory into 120 premium residential loft apartments.",
-    body: "Industrial heritage meets contemporary living — exposed brick, soaring ceilings, and open floor plans breathe new life into a century-old factory in the heart of Brooklyn.",
-    location: "BROOKLYN, NY",
-    image: '/images/gag12.jpeg'
-  },
+  id: 6,
+  cat: "construction",
+  title: "GOLD CREST VIEW 2 — JLT",
+  desc: "Residential construction and fitout works at Gold Crest View 2, Cluster J, Jumeirah Lake Towers — delivering premium living spaces in the heart of Dubai.",
+  body: "A full-scale residential construction and interior fitout project undertaken at Gold Crest View 2, JLT Cluster J. Works included structural upgrades, flooring, ceiling, MEP installations, and finishing — tailored to meet the high standards of JLT's premium residential community.",
+  location: "GOLD CREST VIEW 2, CLUSTER J, JLT, DUBAI",
+  image: "/images/apt2-3.jpeg",
+},
   {
-    id: 7,
-    cat: "construction",
-    title: "HARBOR POINT TOWER",
-    desc: "A 30-story mixed-use high-rise combining offices and retail with waterfront access.",
-    body: "Designed for connectivity and community, Harbor Point Tower offers premium office floors, ground-level retail, and panoramic views of Miami's iconic waterfront.",
-    location: "MIAMI, FL",
-    image: '/images/pool3.jpg'
-  },
+  id: 7,
+  cat: "maintenance",
+  title: "LIV 27 BARBER SHOP — AL BARSHA",
+  desc: "Complete fitout and interior construction of a premium barber shop at Liv 27, Al Barsha 1, Dubai — delivering a sleek, modern grooming space from scratch.",
+  body: "A full barber shop fitout was carried out at Liv 27, Al Barsha 1, Dubai. The project covered complete interior construction including custom barber stations, plumbing, electrical works, wall cladding, flooring, ceiling works, and all finishing — resulting in a premium modern grooming space ready for operations.",
+  location: "LIV 27, AL BARSHA 1, DUBAI",
+  image: "/images/barber2-2.jpeg",
+},
   {
     id: 8,
-    cat: "renovation",
-    title: "CENTRAL MARKET HALL",
-    desc: "Historic market hall restored with modern steel and glass canopy over the original structure.",
-    body: "A seamless fusion of old and new — the original cast-iron columns now stand beneath a sweeping glass canopy, reviving Philadelphia's busiest market as a modern public space.",
-    location: "PHILADELPHIA, PA",
-    image: '/images/barber.jpeg'
-  },
-  {
+    cat: "construction",
+    title: "TKMMAFIT WOODEN DISPLAY",
+    desc: "Custom-built premium wood display cabinet work for an elite fitness environment.",
+    body: "Expertly constructed wooden display units featuring bespoke joinery and high-end finishing, integrated seamlessly into the TKMMAFIT facility in Al Barsha.",
+    location: "TKMMAFIT, AL BARSHA, DUBAI",
+    image: '/images/fitout.jpeg'
+},
+ {
     id: 9,
     cat: "maintenance",
-    title: "WESTSIDE OVERPASS",
-    desc: "Full structural inspection and reinforcement of a critical urban highway overpass.",
-    body: "A comprehensive rehabilitation project covering load testing, concrete reinforcement, and joint replacement — keeping one of LA's busiest corridors safe and operational.",
-    location: "LOS ANGELES, CA",
-    image: '/images/apart2nd.jpeg'
-  }
+    title: "AL BARARI LUXURY POOL CARE",
+    desc: "Professional pool cleaning and maintenance work located in Al Barari.",
+    body: "Expert maintenance including chemical balancing, filtration system checks, and deep cleaning for luxury residential pools in Al Barari, Dubai.",
+    location: "AL BARARI, DUBAI",
+    image: '/images/pool1.jpeg'
+}
 ];
