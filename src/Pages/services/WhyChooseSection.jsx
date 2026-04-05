@@ -14,11 +14,9 @@ function FeatureItem({ Icon, title, desc }) {
       </div>
 
       <div>
-        {/* ✅ H4: text-lg md:text-xl */}
         <h4 className="text-lg md:text-xl font-extrabold leading-tight text-white">
           {title}
         </h4>
-        {/* ✅ Body muted: text-sm */}
         <p className="mt-1.5 max-w-[440px] text-sm leading-5 text-white/85">
           {desc}
         </p>
@@ -36,7 +34,6 @@ export default function WhyChooseSection({
         
         {/* LEFT SIDE */}
         <div>
-          {/* ✅ H2: text-3xl md:text-4xl */}
           <h2 className="whitespace-pre-line text-3xl md:text-4xl font-extrabold leading-[1.02] tracking-[-0.02em] text-white">
             {heading}
           </h2>
@@ -49,7 +46,7 @@ export default function WhyChooseSection({
             />
             <FeatureItem
               title="24/7 Emergency Support"
-              desc="Our rapid response team is available around the clock for critical repairs."
+              desc="Our rapid response team is available around the clock for critical repairs and support."
               Icon={PhoneIcon}
             />
             <FeatureItem
@@ -72,12 +69,10 @@ export default function WhyChooseSection({
             {/* Badge */}
             <div className="absolute -bottom-6 left-8 rounded-xl bg-white px-7 py-4 shadow-[0_18px_40px_rgba(0,0,0,0.18)]">
               <div className="flex items-center gap-4">
-                {/* ✅ Badge number: text-4xl */}
                 <div className="text-4xl font-extrabold leading-none text-[#000000]">
                   5+
                 </div>
                 <div className="leading-tight">
-                  {/* ✅ Badge label: text-xs */}
                   <div className="text-xs font-extrabold tracking-[0.06em] text-[#0B1220]">
                     YEARS OF
                   </div>
