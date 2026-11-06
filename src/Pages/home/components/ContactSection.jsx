@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import formimg from '../../../assets/images/portrait-engineer-job-site-work-hours.jpg';
+import formimg from "../../../assets/images/portrait-engineer-job-site-work-hours.jpg";
 import emailjs from "@emailjs/browser";
 
 const ContactSection = () => {
@@ -8,32 +8,33 @@ const ContactSection = () => {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(
-      "service_nno0akj",     // Your Service ID
-      "template_23t5c0v",    // Your Template ID
-      form.current,           // Reference to the form
-      "7fQm5XIZkU0R7Jyxl"    // Your Public Key
-    )
-    .then(
-      () => {
-        alert("✅ Message sent successfully!");
-        form.current.reset(); // Clear form after success
-      },
-      (error) => {
-        console.error("EmailJS error:", error);
-        alert(`❌ Failed to send message. Check console for details.`);
-      }
-    );
+    emailjs
+      .sendForm(
+        "service_nno0akj",
+        "template_23t5c0v",
+        form.current,
+        "7fQm5XIZkU0R7Jyxl",
+      )
+      .then(
+        () => {
+          alert("✅ Message sent successfully!");
+          form.current.reset(); // Clear form after success
+        },
+        (error) => {
+          console.error("EmailJS error:", error);
+          alert(` Failed to send message. Check console for details.`);
+        },
+      );
   };
 
   return (
-    <section id="contact-form" className="bg-gray-50 w-full min-h-screen flex items-center py-10 md:py-16">
+    <section
+      id="contact-form"
+      className="bg-gray-50 w-full min-h-screen flex items-center py-10 md:py-16"
+    >
       <div className="max-w-5xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-6 items-center px-6">
-
-        {/* LEFT SIDE - Form */}
         <div className="w-full">
           <div className="bg-white p-6 md:p-9 rounded-2xl shadow-xl border border-gray-200">
-            
             <h2 className="text-2xl md:text-3xl font-black text-black leading-tight">
               Ready to define your signature space?
             </h2>
@@ -43,10 +44,9 @@ const ContactSection = () => {
             </p>
 
             <form ref={form} onSubmit={sendEmail} className="mt-6 space-y-4">
-
               <input
                 type="text"
-                name="user_name"          // MUST match template variable
+                name="user_name"
                 placeholder="Your Name"
                 className="w-full bg-gray-50 border-2 border-gray-300 px-4 py-3 text-xs font-bold text-black placeholder-gray-500 focus:border-black focus:bg-white focus:outline-none transition-all rounded-lg"
                 required
@@ -54,7 +54,7 @@ const ContactSection = () => {
 
               <input
                 type="email"
-                name="user_email"         // MUST match template variable
+                name="user_email"
                 placeholder="Your Email"
                 className="w-full bg-gray-50 border-2 border-gray-300 px-4 py-3 text-xs font-bold text-black placeholder-gray-500 focus:border-black focus:bg-white focus:outline-none transition-all rounded-lg"
                 required
@@ -62,21 +62,20 @@ const ContactSection = () => {
 
               <input
                 type="text"
-                name="subject"            // MUST match template variable
+                name="subject"
                 placeholder="Subject"
                 className="w-full bg-gray-50 border-2 border-gray-300 px-4 py-3 text-xs font-bold text-black placeholder-gray-500 focus:border-black focus:bg-white focus:outline-none transition-all rounded-lg"
                 required
               />
 
               <textarea
-                name="message"            // MUST match template variable
+                name="message"
                 rows="5"
                 placeholder="Your Message"
                 className="w-full bg-gray-50 border-2 border-gray-300 px-4 py-3 text-xs font-bold text-black placeholder-gray-500 resize-none focus:border-black focus:bg-white focus:outline-none transition-all rounded-lg"
                 required
               ></textarea>
 
-              {/* Hidden time field (optional) */}
               <input
                 type="hidden"
                 name="time"
@@ -89,7 +88,6 @@ const ContactSection = () => {
               >
                 Send Mail
               </button>
-
             </form>
           </div>
         </div>
@@ -97,10 +95,12 @@ const ContactSection = () => {
         {/* RIGHT SIDE - Image */}
         <div className="w-full h-full">
           <div className="relative w-full h-[450px] md:h-[550px] overflow-hidden rounded-2xl shadow-lg">
-            <img 
+            <img
               src={formimg}
               alt="Office"
-              className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700" 
+              loading="lazy"
+              decoding="async"
+              className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-black/5 pointer-events-none"></div>
           </div>

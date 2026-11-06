@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { PROJECTS_DETAIL_DATA } from "./detailData";
 import HeroSection      from "./HeroSection";
@@ -12,6 +13,7 @@ import ProjectSidebar   from "./ProjectSidebar";
 export default function ProjectDetail() {
   const { id }   = useParams();
   const navigate = useNavigate();
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
   const project  = PROJECTS_DETAIL_DATA.find((p) => p.id === Number(id));
 
   if (!project) {
@@ -64,11 +66,16 @@ export default function ProjectDetail() {
         desc={project.desc}
         cat={project.cat}
         image={project.image}
+        images={project.images}
+        activeIndex={activeImageIndex}
+        onSelectIndex={setActiveImageIndex}
       />
 
       <ThumbStrip
         images={project.images}
         imageLabels={project.imageLabels}
+        activeIndex={activeImageIndex}
+        onSelectIndex={setActiveImageIndex}
       />
 
       {/* ── Main Layout ── */}

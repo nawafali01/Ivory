@@ -11,6 +11,8 @@ export default function ProjectCard({ project }) {
           <img
             src={project.image}
             alt={project.title}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
           <span className="absolute top-3 left-3 bg-black text-white text-[10px] font-bold tracking-widest uppercase px-3 py-1">

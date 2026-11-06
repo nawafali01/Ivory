@@ -63,6 +63,8 @@ export default function WhyChooseSection({
             <img
               src={team}
               alt="BuildGuard Team"
+              loading="lazy"
+              decoding="async"
               className="h-[320px] w-[420px] max-w-full rounded-xl object-cover"
             />
 

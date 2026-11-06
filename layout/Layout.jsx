@@ -1,9 +1,17 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Outlet, useLocation } from 'react-router-dom'
 import Navbar from '../src/components/Navbar'
 import Footer from '../src/components/Footer'
 
 const Layout = () => {
+  const { pathname, hash } = useLocation()
+
+  useEffect(() => {
+    if (!hash) {
+      window.scrollTo({ top: 0, behavior: 'instant' })
+    }
+  }, [pathname, hash])
+
   const whatsappNumber = '+971544605759' // Replace with your WhatsApp number
   const whatsappMessage = "Hi! I’m interested in your maintenance services. Can you provide more details?"
 

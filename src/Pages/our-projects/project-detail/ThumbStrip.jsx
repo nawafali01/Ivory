@@ -1,7 +1,9 @@
 import { useState } from "react";
 
-export default function ThumbStrip({ images, imageLabels }) {
-  const [active, setActive] = useState(0);
+export default function ThumbStrip({ images, imageLabels, activeIndex, onSelectIndex }) {
+  const [internalActive, setInternalActive] = useState(0);
+  const active = activeIndex !== undefined ? activeIndex : internalActive;
+  const setActive = onSelectIndex || setInternalActive;
 
   return (
     <div className="bg-gray-100 border-b border-neutral-200">
@@ -20,6 +22,8 @@ export default function ThumbStrip({ images, imageLabels }) {
               <img
                 src={img}
                 alt={imageLabels?.[i] || `View ${i + 1}`}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover"
               />
             </div>

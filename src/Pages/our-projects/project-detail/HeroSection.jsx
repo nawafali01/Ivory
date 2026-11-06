@@ -1,10 +1,20 @@
 import React, { useState } from "react";
 
-export default function HeroSection({ title, desc, cat, images = [], image }) {
+export default function HeroSection({
+  title,
+  desc,
+  cat,
+  images = [],
+  image,
+  activeIndex,
+  onSelectIndex,
+}) {
   // FIX: Agar images array hai to wo use kare, warna single image ko array bana de
   const slides = images.length > 0 ? images : [image];
-  
-  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const [internalIndex, setInternalIndex] = useState(0);
+  const currentIndex = activeIndex !== undefined ? activeIndex : internalIndex;
+  const setCurrentIndex = onSelectIndex || setInternalIndex;
   const catLabel = cat.charAt(0).toUpperCase() + cat.slice(1);
 
   return (
@@ -14,7 +24,10 @@ export default function HeroSection({ title, desc, cat, images = [], image }) {
         key={currentIndex}
         src={slides[currentIndex]} 
         alt={title}
-        className="w-full h-full object-cover opacity-60 transition-all duration-700 ease-in-out"
+        fetchPriority="high"
+        loading="eager"
+        decoding="async"
+        className="w-full h-full object-cover opacity-75 transition-all duration-700 ease-in-out"
       />
       
       <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />

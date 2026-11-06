@@ -40,6 +40,7 @@ const useTypewriter = (words, { typeSpeed = 100, deleteSpeed = 50, delay = 1200 
 }
 
 const Hero = () => {
+  const [imageLoaded, setImageLoaded] = useState(false)
   const serviceText = useTypewriter(
     [
       "Plumbing Services",
@@ -63,20 +64,21 @@ const Hero = () => {
   return (
     <>
     {/* justify-center aur heavy bottom padding se content uper move hoga */}
-    <section className="relative h-[100vh] w-full flex flex-col justify-center overflow-hidden bg-slate-900   ">
+    <section className="relative isolate h-[100vh] w-full flex flex-col justify-center overflow-hidden bg-slate-900">
       
       <div className="absolute inset-0 z-0">
-        {/* <img 
-          src={logo}
-          alt="Construction Site" 
-          className="w-full h-full object-cover opacity-50"
-        /> */}
         <img 
           src={logo1}
           alt="Construction Site" 
-          className="w-full h-full object-cover opacity-60"
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
+          onLoad={() => setImageLoaded(true)}
+          className={`w-full h-full object-cover transition-opacity duration-500 ${
+            imageLoaded ? 'opacity-85' : 'opacity-0'
+          }`}
         />
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/30"></div>
       </div>
 
       {/* CHANGES HERE: Content Shifted Left by reducing container padding & max-width */}
@@ -109,7 +111,7 @@ const Hero = () => {
             
             {/* CHANGES HERE: 'Explore Projects' Button (link to projects page) */}
             <Link
-              to="/our-project"
+              to="/projects"
               className="group flex items-center justify-center gap-2 backdrop-blur-sm bg-white/10 text-white hover:bg-white hover:text-black font-bold py-2.5 px-6 uppercase rounded-md transition-all border border-white/20 hover:border-white text-xs md:text-sm shadow-md shadow-black/30"
             >
               <span>Explore Projects</span>
